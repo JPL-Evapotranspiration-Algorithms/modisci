@@ -28,7 +28,7 @@ class MODISCI:
 
     def __init__(
             self,
-            username: str,,
+            username: str,
             password: str,
             URL: str = None,
             directory: str = None,
