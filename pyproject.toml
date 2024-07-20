@@ -3,7 +3,7 @@ requires = ["setuptools>=60", "setuptools-scm>=8.0", "wheel"]
 
 [project]
 name = "modisci"
-version = "1.0.0"
+version = "1.0.1"
 description = "generates rasters of MODIS clumping index"
 readme = "README.md"
 authors = [
