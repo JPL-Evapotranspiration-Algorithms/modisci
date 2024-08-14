@@ -1,6 +1,6 @@
 # `modisci` Python Package
 
-The `modisci` Python package generates rasters of the [Global 500-m Foliage Clumping Index 2006](https://daac.ornl.gov/VEGETATION/guides/Global_Clumping_Index.html) dataset derived from Moderate Resolution Imaging Spectroradiometer (MODIS).
+The `modisci` Python package generates rasters of the [Global 500m Foliage Clumping Index 2006](https://daac.ornl.gov/VEGETATION/guides/Global_Clumping_Index.html) dataset derived from Moderate Resolution Imaging Spectroradiometer (MODIS).
 
 [Gregory H. Halverson](https://github.com/gregory-halverson-jpl) (they/them)<br>
 [gregory.h.halverson@jpl.nasa.gov](mailto:gregory.h.halverson@jpl.nasa.gov)<br>
