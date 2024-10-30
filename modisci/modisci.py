@@ -13,8 +13,9 @@ from os.path import dirname
 from os.path import exists
 from os.path import join
 from time import perf_counter
-
 import logging
+
+import colored_logging as cl
 
 logger = logging.getLogger(__name__)
 
