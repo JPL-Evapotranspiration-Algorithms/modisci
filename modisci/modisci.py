@@ -1,3 +1,4 @@
+import netrc
 import base64
 import json
 import logging
@@ -12,6 +13,11 @@ from os.path import dirname
 from os.path import exists
 from os.path import join
 from time import perf_counter
+import logging
+
+import colored_logging as cl
+
+logger = logging.getLogger(__name__)
 
 import rasters as rt
 from rasters import RasterGeometry, Raster
@@ -28,8 +34,8 @@ class MODISCI:
 
     def __init__(
             self,
-            username: str,
-            password: str,
+            username: str = None,
+            password: str = None,
             URL: str = None,
             directory: str = None,
             chunk_size: int = DEFAULT_CHUNK_SIZE):
@@ -38,6 +44,20 @@ class MODISCI:
 
         if directory is None:
             directory = DEFAULT_DIRECTORY
+
+        if username is None or password is None:
+            try:
+                netrc_file = netrc.netrc()
+                username, _, password = netrc_file.authenticators("daac.ornl.gov")
+            except Exception as e:
+                logger.warning("netrc credentials not found for daac.ornl.gov")
+
+        if username is None or password is None:
+            try:
+                netrc_file = netrc.netrc()
+                username, _, password = netrc_file.authenticators("urs.earthdata.nasa.gov")
+            except Exception as e:
+                logger.warning("netrc credentials not found for urs.earthdata.nasa.gov")
 
         self.URL = URL
         self.directory = expanduser(directory)
